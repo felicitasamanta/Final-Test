@@ -6,5 +6,6 @@ All backend was made with Spring framework and represented mainly as RESTful web
 Frontend is actually independent single page application built on Angular framework.
 ## How it could be launched
 To run this project backend `final-api` repository  has to be runned first.
-Then you should initialize frontend folder `final-web` with `npm install` to download all needed dependecies and finally
+Then you should initialize frontend folder `final-web` with 
+`npm install` to download all needed dependecies and finally
 `ng serve --proxy-config proxy.conf.json` to call Angular Cli App.
