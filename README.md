@@ -4,7 +4,7 @@ Example of how Spring Boot on backend and Angular on frontend can be used to cre
 ## How it was built
 All backend was made with Spring framework and represented mainly as RESTful web service.
 Frontend is actually independent single page application built on Angular framework.
-##How it could be launched
+## How it could be launched
 To run this project backend has to be runned first. Then you should initialize frontend folder with `npm install` to download all needed dependecies. 
 
 
