@@ -1,0 +1,30 @@
+<p-dialog [(visible)]="display" (onHide)="this.close()">
+    <ng-template pTemplate="header"> Customer information </ng-template>
+    <ng-template pTemplate="body">
+      <div mat-dialog-content>
+          <form [formGroup]="customerForm">
+            <label for="Name">Name</label>
+            <br>
+                <input formControlName="name" type="text" pInputText > 
+            <br>
+        <label for="Surname">Surname</label>
+            <br>
+                 <input formControlName="surname" type="text" pInputText> 
+            <br>
+        <label for="Birth date">Birth date</label>
+            <br>
+                <input formControlName="dob" formGroupName=""  type="date" id="date" placeholder="2001/01/01" pInputText> 
+            <br>
+        <label for="Telephone number">Telephone number</label>
+            <br>
+                <input formControlName="phoneNumber" type="text" pInputText> 
+            <br>
+        <label for="E-mail">E-mail</label>
+            <br>
+                <input formControlName="email" type="email" id="email" name="email" placeholder="example@example.com" pInputText>
+            <br><br>
+         <button *ngIf="this.isAddForm" type="button"  (click)="addCustomer()"> Save </button>
+          </form>
+      </div>
+    </ng-template>
+</p-dialog>

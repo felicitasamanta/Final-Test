@@ -1,0 +1,48 @@
+<mat-toolbar>
+  <div class="container" >
+    <h2 style="padding-bottom: 10px">{{ title }}</h2>
+    <input pInputText type="text"  (input)="dtCustomer.filterGlobal($any($event.target).value, 'contains')" placeholder="Search keyword" >
+    <button type="button" pButton icon="fa-add"  style="float: right" (click)="openDialog()">Add</button>
+  
+  </div>
+</mat-toolbar>
+<br />
+<div class="container">
+  <p-table
+    #dtCustomer
+    class="table table-bordered table-hover"
+    [value]="customers?.customerList"
+    [globalFilterFields]="['id', 'name', 'birthDate', 'email', 'phoneNumber']"
+    selectionMode="single"
+    [(selection)]="customers"
+  >
+
+    <ng-template pTemplate="header">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Birth date</th>
+        <th>Telephone number</th>
+        <th>E-mail</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-customer>
+      <tr (click)="openViewForm() ">
+      <!-- [pSelectableRow]="customers?.customerList" -->
+       
+        <td>{{ customer.id }} </td>
+        <td>{{ customer.name }}</td>
+        <td>{{ customer.surname }}</td>
+        <td>{{ customer.dob }}</td>
+        <td>{{ customer.phoneNumber }}</td>
+        <td>{{ customer.email }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+<app-dialog
+  [display]="this.display"
+  [isAddForm]="this.isAddForm"
+  (displayChange)="this.closedDialog()"
+></app-dialog>
