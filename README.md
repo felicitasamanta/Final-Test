@@ -9,3 +9,4 @@ To run this project backend `final-api` repository  has to be runned first.
 Then you should initialize frontend folder `final-web` with 
 `npm install` to download all needed dependecies and finally
 `ng serve --proxy-config proxy.conf.json` to call Angular Cli App.
+Started application will be available on `localhost:4200` address.
